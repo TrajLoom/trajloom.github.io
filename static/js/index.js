@@ -1,41 +1,5 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-// More Works Dropdown Functionality
-function toggleMoreWorks() {
-    const dropdown = document.getElementById('moreWorksDropdown');
-    const button = document.querySelector('.more-works-btn');
-    
-    if (dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    } else {
-        dropdown.classList.add('show');
-        button.classList.add('active');
-    }
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const container = document.querySelector('.more-works-container');
-    const dropdown = document.getElementById('moreWorksDropdown');
-    const button = document.querySelector('.more-works-btn');
-    
-    if (container && !container.contains(event.target)) {
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    }
-});
-
-// Close dropdown on escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const dropdown = document.getElementById('moreWorksDropdown');
-        const button = document.querySelector('.more-works-btn');
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    }
-});
-
 // Copy BibTeX to clipboard
 function copyBibTeX() {
     const bibtexElement = document.getElementById('bibtex-code');
@@ -90,11 +54,11 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Video carousel autoplay when in view
-function setupVideoCarouselAutoplay() {
-    const carouselVideos = document.querySelectorAll('.results-carousel video');
+// Autoplay videos when they are in view
+function setupVideoAutoplay() {
+    const autoplayVideos = document.querySelectorAll('.results-carousel video, video.autoplay-media');
     
-    if (carouselVideos.length === 0) return;
+    if (autoplayVideos.length === 0) return;
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -114,7 +78,9 @@ function setupVideoCarouselAutoplay() {
         threshold: 0.5 // Trigger when 50% of the video is visible
     });
     
-    carouselVideos.forEach(video => {
+    autoplayVideos.forEach(video => {
+        video.muted = true;
+        video.playsInline = true;
         observer.observe(video);
     });
 }
@@ -136,7 +102,65 @@ $(document).ready(function() {
 	
     bulmaSlider.attach();
     
-    // Setup video autoplay for carousel
-    setupVideoCarouselAutoplay();
+    // Setup video autoplay for carousel and qualitative results
+    setupVideoAutoplay();
 
 })
+
+
+function closePipelinePanels() {
+    const panelsContainer = document.getElementById('pipeline-method-panels');
+
+    document.querySelectorAll('.method-panel').forEach(function (panel) {
+        panel.hidden = true;
+        panel.setAttribute('aria-hidden', 'true');
+        panel.classList.remove('is-active');
+    });
+
+    if (panelsContainer) {
+        panelsContainer.hidden = true;
+        panelsContainer.setAttribute('aria-hidden', 'true');
+        panelsContainer.classList.remove('is-active');
+    }
+
+    document.body.classList.remove('pipeline-modal-open');
+}
+
+function togglePipelinePanel(panelId) {
+    const panelsContainer = document.getElementById('pipeline-method-panels');
+    const targetPanel = document.getElementById(panelId);
+
+    if (!panelsContainer || !targetPanel) {
+        return;
+    }
+
+    const panelIsAlreadyOpen = !panelsContainer.hidden && !targetPanel.hidden;
+
+    closePipelinePanels();
+
+    if (panelIsAlreadyOpen) {
+        return;
+    }
+
+    panelsContainer.hidden = false;
+    panelsContainer.setAttribute('aria-hidden', 'false');
+    panelsContainer.classList.add('is-active');
+
+    targetPanel.hidden = false;
+    targetPanel.setAttribute('aria-hidden', 'false');
+    targetPanel.classList.add('is-active');
+
+    document.body.classList.add('pipeline-modal-open');
+}
+
+function handlePipelineModalBackdrop(event) {
+    if (event.target === event.currentTarget) {
+        closePipelinePanels();
+    }
+}
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closePipelinePanels();
+    }
+});

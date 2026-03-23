@@ -3,68 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="title" content="TrajLoom: Dense Future Trajectory Generation from Video">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="description" content="Predicting future motion is crucial in video understanding and controllable video generation. Dense point trajectories are a compact, expressive motion representation, but modeling their future evolution from observed video remains challenging. We propose a framework that predicts future trajectories and visibility from past trajectories and video context. Our method has three components: (1) Grid-Anchor Offset Encoding, which reduces location-dependent bias by representing each point as an offset from its pixel-center anchor; (2) TrajLoom-VAE, which learns a compact spatiotemporal latent space for dense trajectories with masked reconstruction and a spatiotemporal consistency regularizer; and (3) TrajLoom-Flow, which generates future trajectories in latent space via flow matching, with boundary cues and on-policy K-step fine-tuning for stable sampling. We also introduce TrajLoomBench, a unified benchmark spanning real and synthetic videos with a standardized setup aligned with video-generation benchmarks. Compared with state-of-the-art methods, our approach extends the prediction horizon from 24 to 81 frames while improving motion realism and stability across datasets. The predicted trajectories directly support downstream video generation and editing.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <meta name="keywords" content="Trajectory Generation, Video Motion, Flow Matching">
   <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="author" content="Zewei Zhang, Jia Jun Cheng Xian, Kaiwen Liu, Hang Chu, Jun Chen, Renjie Liao">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
+  <meta property="og:title" content="TrajLoom: Dense Future Trajectory Generation from Video">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta property="og:description" content="Predicting future motion is crucial in video understanding and controllable video generation. Dense point trajectories are a compact, expressive motion representation, but modeling their future evolution from observed video remains challenging. We propose a framework that predicts future trajectories and visibility from past trajectories and video context. Our method has three components: (1) Grid-Anchor Offset Encoding, which reduces location-dependent bias by representing each point as an offset from its pixel-center anchor; (2) TrajLoom-VAE, which learns a compact spatiotemporal latent space for dense trajectories with masked reconstruction and a spatiotemporal consistency regularizer; and (3) TrajLoom-Flow, which generates future trajectories in latent space via flow matching, with boundary cues and on-policy K-step fine-tuning for stable sampling. We also introduce TrajLoomBench, a unified benchmark spanning real and synthetic videos with a standardized setup aligned with video-generation benchmarks. Compared with state-of-the-art methods, our approach extends the prediction horizon from 24 to 81 frames while improving motion realism and stability across datasets. The predicted trajectories directly support downstream video generation and editing.">
   <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <meta property="og:url" content="https://trajloom.github.io/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image" content="https://trajloom.github.io/static/images/pipeline.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="og:image:alt" content="TrajLoom: Dense Future Trajectory Generation from Video - Research Preview">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:author" content="Zewei Zhang">
+  <meta property="article:author" content="Jia Jun Cheng Xian">
+  <meta property="article:author" content="Kaiwen Liu">
+  <meta property="article:author" content="Hang Chu">
+  <meta property="article:author" content="Jun Chen">
+  <meta property="article:author" content="Renjie Liao">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Trajectory Generation">
+  <meta property="article:tag" content="Video Motion">
+  <meta property="article:tag" content="Flow Matching">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <meta name="twitter:site" content="@ZeweiZhang77">
   <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <meta name="twitter:creator" content="@ZeweiZhang77">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
+  <meta name="twitter:title" content="TrajLoom: Dense Future Trajectory Generation from Video">
   <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="twitter:description" content="TrajLoom predicts dense future trajectories from video, extending the prediction horizon to 81 frames with improved motion realism and stability.">
   <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:image" content="https://trajloom.github.io/static/images/pipeline.png">
+  <meta name="twitter:image:alt" content="TrajLoom: Dense Future Trajectory Generation from Video - Research Preview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_title" content="TrajLoom: Dense Future Trajectory Generation from Video">
+  <meta name="citation_author" content="Zewei Zhang">
+  <meta name="citation_author" content="Jia Jun Cheng Xian">
+  <meta name="citation_author" content="Kaiwen Liu">
+  <meta name="citation_author" content="Hang Chu">
+  <meta name="citation_author" content="Jun Chen">
+  <meta name="citation_author" content="Renjie Liao">
   <meta name="citation_publication_date" content="2024">
   <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
+  <meta name="citation_pdf_url" content="https://trajloom.github.io/static/pdfs/paper.pdf">
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,22 +84,23 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
+  <title>TrajLoom: Dense Future Trajectory Generation from Video</title>
+
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+  <link rel="icon" type="image/jpeg" href="static/images/TrajLoom_icon.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="static/images/TrajLoom_icon.jpg">
+  <link rel="apple-touch-icon" href="static/images/TrajLoom_icon.jpg">
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -97,10 +108,10 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -108,29 +119,61 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "TrajLoom: Dense Future Trajectory Generation from Video",
+    "description": "Predicting future motion is crucial in video understanding and controllable video generation. Dense point trajectories are a compact, expressive motion representation, but modeling their future evolution from observed video remains challenging. We propose a framework that predicts future trajectories and visibility from past trajectories and video context. Our method has three components: (1) Grid-Anchor Offset Encoding, which reduces location-dependent bias by representing each point as an offset from its pixel-center anchor; (2) TrajLoom-VAE, which learns a compact spatiotemporal latent space for dense trajectories with masked reconstruction and a spatiotemporal consistency regularizer; and (3) TrajLoom-Flow, which generates future trajectories in latent space via flow matching, with boundary cues and on-policy K-step fine-tuning for stable sampling. We also introduce TrajLoomBench, a unified benchmark spanning real and synthetic videos with a standardized setup aligned with video-generation benchmarks. Compared with state-of-the-art methods, our approach extends the prediction horizon from 24 to 81 frames while improving motion realism and stability across datasets. The predicted trajectories directly support downstream video generation and editing.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Zewei Zhang",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "McMaster University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Jia Jun Cheng Xian",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "University of British Columbia"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Kaiwen Liu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of British Columbia"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Hang Chu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Viggle AI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Jun Chen",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "McMaster University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Renjie Liao",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of British Columbia"
         }
       }
     ],
@@ -139,16 +182,16 @@
       "@type": "Organization",
       "name": "CONFERENCE_OR_JOURNAL_NAME"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "url": "https://trajloom.github.io/",
+    "image": "https://trajloom.github.io/static/images/pipeline.png",
+    "keywords": ["Trajectory Generation", "Video Motion", "Flow Matching"],
+    "abstract": "Predicting future motion is crucial in video understanding and controllable video generation. Dense point trajectories are a compact, expressive motion representation, but modeling their future evolution from observed video remains challenging. We propose a framework that predicts future trajectories and visibility from past trajectories and video context. Our method has three components: (1) Grid-Anchor Offset Encoding, which reduces location-dependent bias by representing each point as an offset from its pixel-center anchor; (2) TrajLoom-VAE, which learns a compact spatiotemporal latent space for dense trajectories with masked reconstruction and a spatiotemporal consistency regularizer; and (3) TrajLoom-Flow, which generates future trajectories in latent space via flow matching, with boundary cues and on-policy K-step fine-tuning for stable sampling. We also introduce TrajLoomBench, a unified benchmark spanning real and synthetic videos with a standardized setup aligned with video-generation benchmarks. Compared with state-of-the-art methods, our approach extends the prediction horizon from 24 to 81 frames while improving motion realism and stability across datasets. The predicted trajectories directly support downstream video generation and editing.",
     "citation": "BIBTEX_CITATION_HERE",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://trajloom.github.io/"
     },
     "about": [
       {
@@ -156,13 +199,29 @@
         "name": "RESEARCH_AREA_1"
       },
       {
-        "@type": "Thing", 
+        "@type": "Thing",
         "name": "RESEARCH_AREA_2"
       }
     ]
   }
   </script>
-  
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false}
+      ]
+    });
+  });
+</script>
+
+
   <!-- Website/Organization Structured Data -->
   <script type="application/ld+json">
   {
@@ -170,7 +229,7 @@
     "@type": "Organization",
     "name": "INSTITUTION_OR_LAB_NAME",
     "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "logo": "https://trajloom.github.io/static/images/TrajLoom_icon.jpg",
     "sameAs": [
       "https://twitter.com/YOUR_TWITTER_HANDLE",
       "https://github.com/YOUR_GITHUB_USERNAME"
@@ -186,54 +245,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -241,68 +252,104 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: nowrap; margin-bottom: 1.5rem; transform: translateX(-56px);">
+              <img src="static/images/TrajLoom_icon.jpg" alt="TrajLoom logo" style="width: clamp(104px, 11.5vw, 156px); height: auto; border-radius: 12px; flex-shrink: 0; align-self: center; transform: translateY(-10px);">
+              <div style="display: flex; align-items: center;">
+                <h1 class="title is-1 publication-title" style="margin-bottom: 0; line-height: 1.05;">
+                  <span style="display: block; white-space: nowrap;">TrajLoom: Dense Future</span>
+                  <span style="display: block; white-space: nowrap;">Trajectory Generation from Video</span>
+                </h1>
+              </div>
+            </div>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="https://github.com/zewei-Zhang/TrajLoom">Zewei Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="mailto:anthony@ece.ubc.ca">Jia Jun Cheng Xian</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/kevin-liu-a1009822b/">Kaiwen Liu</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="mailto:liangming.elgoog@gmail.com">Ming Liang</a><sup>4</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="mailto:hang.chu@warpengine.ai">Hang Chu</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.ece.mcmaster.ca/~junchen/">Jun Chen</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://lrjconan.github.io/">Renjie Liao</a><sup>2,3,5</sup>
+              </span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>McMaster University</span>
+              <span class="author-block"><sup>2</sup>University of British Columbia</span>
+              <br>
+              <span class="author-block"><sup>3</sup>Vector Institute</span>
+              <span class="author-block"><sup>4</sup>Viggle AI</span>
+              <span class="author-block"><sup>5</sup>Canada CIFAR AI Chair</span>
+            </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
+                      <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <i class="ai ai-arxiv"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>arXiv</span>
                       </a>
                     </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <!-- Paper button hidden until the PDF is ready.
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                    -->
+
+                    <!-- TODO: Replace with your GitHub repository URL -->
+                    <span class="link-block">
+                      <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
                     </a>
                   </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <!-- TODO: Replace with your Hugging Face model URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://huggingface.co/zeweizhang/TrajLoom" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark hf-button">
                     <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face" class="button-icon-image">
                     </span>
-                    <span>Code</span>
+                    <span>Models</span>
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- TODO: Replace with your Hugging Face dataset URL -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://huggingface.co/datasets/zeweizhang/TrajLoomDatasets" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark hf-button">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face" class="button-icon-image">
                   </span>
-                  <span>arXiv</span>
+                  <span>Datasets</span>
                 </a>
               </span>
             </div>
@@ -315,22 +362,84 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<section class="hero teaser" style="margin-top: -36px;">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="padding-top: 0;">
       <!-- TODO: Replace with your teaser video -->
       <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
         <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
+        <source src="static/videos/Trajloom.mp4" type="video/mp4">
       </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
+
+<section class="section pipeline-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline Overview</h2>
+        <figure class="pipeline-figure image">
+          <img src="static/images/pipeline.png" alt="Overview of the TrajLoom pipeline" loading="lazy">
+        </figure>
+        <p class="pipeline-caption has-text-left">
+          <strong>Overview of TrajLoom.</strong>
+          Given observed trajectories \( \mathcal{T}^{p} \), we rasterize and encode
+          them with<br>Grid-Anchor Offset Encoding into a dense offset field, then compress
+          with TrajLoom-VAE into<br>history latents \( \mathbf{z}^{p} \). Conditioned on
+          \( \mathbf{z}^{p} \) and video features, TrajLoom-Flow generates future latents<br>
+          via rectified-flow integration with boundary hints, which are decoded by
+          TrajLoom-VAE into future trajectories \( \hat{\mathcal{T}}^{f} \).
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-multiline mt-5">
+      <div class="column is-4">
+        <div class="box pipeline-card">
+          <h3 class="title is-5">1. Grid-Anchor Offset Encoding</h3>
+          <p class="pipeline-summary">
+            Grid-Anchor Offset Encoding reduces location-dependent bias by representing each
+            observed point as an offset from its pixel-center anchor, producing a dense motion
+            field that is easier to model than absolute coordinates.
+          </p>
+          <button type="button" class="button is-small is-light pipeline-more-btn" onclick="togglePipelinePanel('encoding-panel'); return false;">
+            Read more
+          </button>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="box pipeline-card">
+          <h3 class="title is-5">2. TrajLoom-VAE</h3>
+          <p class="pipeline-summary">
+            TrajLoom-VAE learns a compact spatiotemporal latent space for dense trajectories
+            with masked reconstruction and a spatiotemporal consistency regularizer.
+          </p>
+          <button type="button" class="button is-small is-light pipeline-more-btn" onclick="togglePipelinePanel('vae-panel'); return false;">
+            Read more
+          </button>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="box pipeline-card">
+          <h3 class="title is-5">3. TrajLoom-Flow</h3>
+          <p class="pipeline-summary">
+            TrajLoom-Flow predicts the full future trajectory window in the latent
+            space from history latents, visibility, and video features, using boundary cues and
+            on-policy K-step fine-tuning for stable long-horizon sampling.
+          </p>
+          <button type="button" class="button is-small is-light pipeline-more-btn" onclick="togglePipelinePanel('generator-panel'); return false;">
+            Read more
+          </button>
+        </div>
+      </div>
+
+
+  </div>
+</section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -341,7 +450,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Predicting future motion is crucial in video understanding and controllable video generation. Dense point trajectories are a compact, expressive motion representation, but modeling their future evolution from observed video remains challenging. We propose a framework that predicts future trajectories and visibility from past trajectories and video context. Our method has three components: (1) Grid-Anchor Offset Encoding, which reduces location-dependent bias by representing each point as an offset from its pixel-center anchor; (2) TrajLoom-VAE, which learns a compact spatiotemporal latent space for dense trajectories with masked reconstruction and a spatiotemporal consistency regularizer; and (3) TrajLoom-Flow, which generates future trajectories in latent space via flow matching, with boundary cues and on-policy K-step fine-tuning for stable sampling. We also introduce TrajLoomBench, a unified benchmark spanning real and synthetic videos with a standardized setup aligned with video-generation benchmarks. Compared with state-of-the-art methods, our approach extends the prediction horizon from 24 to 81 frames while improving motion realism and stability across datasets. The predicted trajectories directly support downstream video generation and editing.
           </p>
         </div>
       </div>
@@ -351,35 +460,30 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Legacy image carousel kept for later use.
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- TODO: Replace with your research result images -->
         <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -389,84 +493,509 @@
 </div>
 </div>
 </section>
-<!-- End image carousel -->
+End legacy image carousel -->
 
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+<section class="section qualitative-results">
+  <div class="container qual-results-container" style="max-width: 1500px; width: min(1500px, calc(100vw - 3rem)); overflow-x: auto;">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <div class="qual-results-list">
+      <!-- Copy one .qual-results-row block to add another row. -->
+      <!-- Replace a <video> with <img class="qual-media" src="..."> if one slot should be an image instead. -->
+      <!-- Desktop: columns 1-2 are example A, columns 3-4 are example B. -->
+      <!-- Use a smaller --qual-example-gap within an example and a larger --qual-group-gap between examples. -->
+      <div class="qual-results-header" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: center; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto -1.45rem;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Generation</div>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Generation</div>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3859462/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3859462/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3173214/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3173214/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3940416/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3940416/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4507988/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4507988/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3997787/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3997787/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4017224/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4017224/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4071183/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4071183/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4122566/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4122566/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+<section class="section hero is-light qualitative-results">
+  <div class="container qual-results-container" style="max-width: 1500px; width: min(1500px, calc(100vw - 3rem)); overflow-x: auto;">
+    <h2 class="title is-3 has-text-centered">Qualitative Comparison</h2>
+    <div class="qual-results-list">
+      <div class="qual-results-header" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: center; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto -1.45rem;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Ours Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Ours Generation</div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">WHN Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">WHN Generation</div>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/1954725_24/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/1954725_24/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/images/qual/whn_1954725/frame_hist_last.png" alt="WHN condition frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/images/qual/whn_1954725/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3h4-fvlK6bE_000193_000203_24/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3h4-fvlK6bE_000193_000203_24/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/images/qual/whn_3h4-fvlK6bE_000193_000203/frame_hist_last.png" alt="WHN condition frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/images/qual/whn_3h4-fvlK6bE_000193_000203/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4277723_24/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/4277723_24/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/images/qual/whn_4277723/frame_hist_last.png" alt="WHN condition frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/images/qual/whn_4277723/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3002335_24/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3002335_24/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/images/qual/whn_3002335/frame_hist_last.png" alt="WHN condition frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/images/qual/whn_3002335/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
 
 
 
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+<section class="section qualitative-results">
+  <div class="container qual-results-container" style="max-width: 1500px; width: min(1500px, calc(100vw - 3rem)); overflow-x: auto;">
+    <h2 class="title is-3 has-text-centered">Downstream Tasks</h2>
+    <div class="qual-results-list">
+      <!-- One row = one example. Copy one .qual-results-row block to add another example. -->
+      <div class="qual-results-header" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: center; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto -1.45rem;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Ours Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Ours Generation</div>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Wan-Move Image Condition</div>
+          <div class="qual-header-cell" style="width: var(--qual-media-width); text-align: center;">Wan-Move Generation</div>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2657255/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2657255/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/videos/qual/wanmove_2657255/start.jpg" alt="WANMove start frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/wanmove_2657255/wanmove_pred_gtvis.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2882799/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2882799/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/videos/qual/wanmove_2882799/start.jpg" alt="WANMove start frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/wanmove_2882799/wanmove_pred_gtvis.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2815442/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/2815442/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/videos/qual/wanmove_2815442/start.jpg" alt="WANMove start frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/wanmove_2815442/wanmove_pred_gtvis.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      </div>
+      <div class="qual-results-row" style="--qual-media-width: 240px; --qual-example-gap: 0.5rem; --qual-group-gap: 2rem; display: flex; gap: var(--qual-group-gap); flex-wrap: nowrap; align-items: flex-start; justify-content: center; width: max-content; min-width: 100%; margin: 0 auto;">
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3402765/traj_gt.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="qual-media-card" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/3402765/traj_pred.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="qual-example" style="display: grid; grid-template-columns: repeat(2, minmax(0, var(--qual-media-width))); column-gap: var(--qual-example-gap); row-gap: 1rem; width: calc((2 * var(--qual-media-width)) + var(--qual-example-gap)); flex: 0 0 auto;">
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <img class="qual-media" src="static/videos/qual/wanmove_3402765/start.jpg" alt="WANMove start frame" loading="lazy">
+          </figure>
+          <figure class="qual-media-card qual-media-frame" style="width: var(--qual-media-width); margin: 0;">
+            <video class="qual-media autoplay-media" autoplay muted loop playsinline preload="metadata">
+              <source src="static/videos/qual/wanmove_3402765/wanmove_pred_gtvis.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+
+<section class="section hero is-light quantitative-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <div class="quantitative-card">
+      <p class="quantitative-caption">
+        Comparison of trajectory generation with WHN (L). FVMD and flow diagnostics
+        (FlowTV &times; 10<sup>2</sup>, DivCurlE &times; 10<sup>3</sup>; &darr;) on
+        Kinetics, RoboTAP, Kubric (MOVi-A; same config as WHN), and MagicData (E).
+      </p>
+      <div class="table-container">
+        <table class="table is-fullwidth quantitative-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Method</th>
+              <th>Kinetics</th>
+              <th>RoboTAP</th>
+              <th>Kubric</th>
+              <th>MagicData (E)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="rowgroup" rowspan="2" class="metric-cell">FVMD &darr;</th>
+              <td>WHN (L)</td>
+              <td>8999</td>
+              <td>7587</td>
+              <td>4872</td>
+              <td>10383</td>
+            </tr>
+            <tr class="is-ours-row">
+              <td><strong>Ours</strong></td>
+              <td><strong>3626</strong></td>
+              <td><strong>2467</strong></td>
+              <td><strong>1338</strong></td>
+              <td><strong>2968</strong></td>
+            </tr>
+            <tr class="metric-divider">
+              <th scope="rowgroup" rowspan="2" class="metric-cell">FlowTV (&times;10<sup>2</sup>) &darr;</th>
+              <td>WHN (L)</td>
+              <td>24.71</td>
+              <td>27.26</td>
+              <td>12.56</td>
+              <td>26.74</td>
+            </tr>
+            <tr class="is-ours-row">
+              <td><strong>Ours</strong></td>
+              <td><strong>7.53</strong></td>
+              <td><strong>6.03</strong></td>
+              <td><strong>6.03</strong></td>
+              <td><strong>7.11</strong></td>
+            </tr>
+            <tr class="metric-divider">
+              <th scope="rowgroup" rowspan="2" class="metric-cell">DivCurlE (&times;10<sup>3</sup>) &darr;</th>
+              <td>WHN (L)</td>
+              <td>34.69</td>
+              <td>37.39</td>
+              <td>9.89</td>
+              <td>40.04</td>
+            </tr>
+            <tr class="is-ours-row">
+              <td><strong>Ours</strong></td>
+              <td><strong>3.97</strong></td>
+              <td><strong>2.03</strong></td>
+              <td><strong>2.09</strong></td>
+              <td><strong>2.99</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="content has-text-justified quantitative-summary">
+      <p>
+        <strong>Future-trajectory generation.</strong> The table above compares our
+        generator and WHN (L) on real data (Kinetics, RoboTAP), synthetic data
+        (Kubric), and MagicData (E). Kubric uses the same MOVi-A setup as WHN (L),
+        and we re-render the dataset for direct comparison. Our method consistently
+        improves motion quality, reducing FVMD by 2.5-3.6x, for example from 4872 to
+        1338 on Kubric. It also lowers FlowTV and DivCurlE, indicating fewer spatial
+        discontinuities and more stable motion.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!--&lt;!&ndash; Youtube video &ndash;&gt;-->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <h2 class="title is-3">Video Presentation</h2>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--        <div class="column is-four-fifths">-->
+
+<!--          <div class="publication-video">-->
+<!--            &lt;!&ndash; TODO: Replace with your YouTube video ID &ndash;&gt;-->
+<!--            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End youtube video &ndash;&gt;-->
+
+
+<!--&lt;!&ndash; Video carousel &ndash;&gt;-->
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title is-3">Another Carousel</h2>-->
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+<!--        <div class="item item-video1">-->
+<!--          &lt;!&ndash; TODO: Add poster image for better preview &ndash;&gt;-->
+<!--          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel1.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video2">-->
+<!--          &lt;!&ndash; TODO: Add poster image for better preview &ndash;&gt;-->
+<!--          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel2.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video3">-->
+<!--          &lt;!&ndash; TODO: Add poster image for better preview &ndash;&gt;-->
+<!--          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">-->
+<!--            &lt;!&ndash; Your video file here &ndash;&gt;-->
+<!--            <source src="static/videos/carousel3.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; End video carousel &ndash;&gt;-->
+
+
+
 
 
 
@@ -480,17 +1009,19 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@article{trajloom_tbd,
+  title={TBD},
+  author={Zewei Zhang and Jia Jun Cheng Xian and Kaiwen Liu and Ming Liang and Hang Chu and Jun Chen and Renjie Liao},
+  journal={TBD},
+  year={TBD},
+  url={TBD}
 }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
+
+</main>
 
   <footer class="footer">
   <div class="container">
@@ -511,10 +1042,117 @@
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+
+
+<div id="pipeline-method-panels" class="method-panels" hidden aria-hidden="true" onclick="handlePipelineModalBackdrop(event)">
+      <div id="encoding-panel" class="box method-panel" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="encoding-panel-title">
+        <div class="method-panel-header">
+          <h3 id="encoding-panel-title" class="title is-4 mb-0">1. Grid-Anchor Offset Encoding</h3>
+          <button type="button" class="button is-small is-light" onclick="closePipelinePanels(); return false;">Close</button>
+        </div>
+
+        <figure class="image method-panel-figure">
+          <img src="static/images/offset.png" alt="Grid-Anchor Offset Encoding" loading="lazy" style="background: transparent; box-shadow: none; border-radius: 0; width: 65%; max-height: 34vh; height: auto;">
+        </figure>
+
+        <div class="content">
+          <p>
+            Starting from sparse trajectories \( \mathcal{T}=\{\tau_n\}_{n=1}^{N} \),
+            <strong>Grid-Anchor Offset Encoding</strong> constructs a dense trajectory
+            representation. Instead of representing motion by absolute image
+            coordinates, it represents each pixel by its displacement from a local pixel-center
+            anchor. This produces a zero-centered, location-consistent representation that is
+            easier to model across different image regions.
+          </p>
+
+          <h4 class="title is-6">Why this helps?</h4>
+          <p>
+            With absolute coordinates, trajectory variance is strongly dominated by grid
+            location: points from different cells are centered at different image positions even
+            when their local motion is similar. By subtracting the pixel-center anchor, the
+            encoding removes most of this location-driven bias and focuses the representation on
+            local displacement. This makes the motion field more uniform and easier for the
+            downstream VAE and flow model to learn.
+          </p>
+        </div>
+      </div>
+
+      <div id="vae-panel" class="box method-panel" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="vae-panel-title">
+        <div class="method-panel-header">
+          <h3 id="vae-panel-title" class="title is-4 mb-0">2. TrajLoom-VAE</h3>
+          <button type="button" class="button is-small is-light" onclick="closePipelinePanels(); return false;">Close</button>
+        </div>
+
+        <figure class="image method-panel-figure">
+          <img src="static/images/regulizer.png" alt="Toy example showing why spatiotemporal consistency regularization is needed" loading="lazy">
+        </figure>
+
+        <div class="content">
+          <p>
+            Dense trajectory fields are high-dimensional, so <strong>TrajLoom-VAE</strong>
+            learns a compact spatiotemporal latent space for efficient future generation.
+            A visibility-masked pointwise reconstruction loss encourages the reconstruction to
+            match the target at visible locations, but it does not directly model temporal
+            evolution or local relative motion. As a result, reconstruction error alone can still
+            produce temporally jittery or locally inconsistent motion. To address this, we add a
+            <strong>spatiotemporal consistency regularizer</strong> that matches both temporal
+            velocities and multiscale spatial neighbor relations between the target segment and
+            the reconstruction.
+          </p>
+
+          <h4 class="title is-6">Why the regularizer is important?</h4>
+          <p>
+            The toy example above shows the core issue. A smooth reconstruction and a jittery
+            reconstruction can have the same pointwise reconstruction loss, because both match
+            the ground truth equally well at individual frames. However, they imply very different
+            motion over time: the smooth reconstruction preserves consistent velocity, while the
+            jittery one alternates its frame-to-frame displacement. The consistency regularizer
+            assigns a low penalty to smooth motion and a high penalty to jitter, helping the latent
+            space prefer temporally smooth and locally coherent trajectories.
+          </p>
+        </div>
+      </div>
+
+    <div id="generator-panel" class="box method-panel" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="generator-panel-title">
+      <div class="method-panel-header">
+        <h3 id="generator-panel-title" class="title is-4 mb-0">3. TrajLoom-Flow</h3>
+        <button type="button" class="button is-small is-light" onclick="closePipelinePanels(); return false;">Close</button>
+      </div>
+
+      <figure class="image method-panel-figure">
+        <img src="static/images/boundary.png" alt="Boundary hints in TrajLoom-Flow" loading="lazy" style="background: transparent; box-shadow: none; border-radius: 0; width: 65%; max-height: 34vh; height: auto;">
+      </figure>
+
+      <div class="content">
+        <p>
+          <strong>TrajLoom-Flow</strong> generates future trajectories in the latent space learned by
+          TrajLoom-VAE. It is conditioned on historical latents, visibility, video features, and a
+          text prompt, and learns a conditional velocity field to model future trajectory.
+        </p>
+
+        <h4 class="title is-6">Boundary cues</h4>
+        <p>
+          We use two lightweight boundary cues to help predictions stay aligned with the observed past.
+          First, the latent state is anchored with the last history latent
+          slice as shown above, which encourages continuity at the history-future boundary. Second, we inject
+          token-aligned history features directly into the generator.
+        </p>
+
+        <h4 class="title is-6">On-policy K-step fine-tuning</h4>
+        <p>
+          A standard flow-matching objective trains the model on interpolated latent states, but
+          sampling uses states produced by integrating the learned ODE. This train-test mismatch
+          can cause drift over long horizons. To reduce that gap, we apply <strong>on-policy
+          K-step fine-tuning</strong>, which lets the generator learn from its own rollout states
+          and improves stability during sampling.
+        </p>
+      </div>
+    </div>
+
+</body>
+</html>
